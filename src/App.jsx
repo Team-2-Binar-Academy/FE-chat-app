@@ -1,6 +1,6 @@
 import { RouterProvider, createBrowserRouter } from "react-router-dom";
 import { HomePage } from "./pages/HomePage";
-import { LoginPage } from "./pages/LoginPage";
+import Login  from "./pages/LoginPage";
 import Register from "./pages/RegisterPage";
 import { Provider } from "react-redux";
 import { ToastContainer } from "react-toastify";
@@ -14,7 +14,7 @@ const router = createBrowserRouter([
     },
     {
         path: "/login",
-        element: <LoginPage />,
+        element: <Login />,
     },
     {
         path: "/register",

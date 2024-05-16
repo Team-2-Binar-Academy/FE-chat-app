@@ -3,32 +3,33 @@ import React from "react";
 import { Link } from "react-router-dom"; // Import Link from React Router
 import { useNavigate } from "react-router-dom";
 import { useDispatch } from "react-redux";
-import { register } from "../../redux/action/auth";
+// import { register } from "../../redux/action/auth";
+import { login } from "../../redux/action/auth";
 import { toast } from "react-toastify";
 import GoogleLoginComponent from "../GoogleLogin";
 
 import "react-toastify/dist/ReactToastify.css";
 
-function RegisterPage() {
+function LoginPage() {
   const navigate = useNavigate();
   const dispatch = useDispatch();
 
-  const [name, setName] = useState("");
+//   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  const [confirmPassword, setConfirmPassword] = useState("");
+//   const [confirmPassword, setConfirmPassword] = useState("");
   const [isLoading, setIsLoading] = useState(false);
 
   const onSubmit = async (e) => {
     e.preventDefault();
 
-    if (password != confirmPassword) {
-      toast.error(`Password and confirm password must be same!`);
-      return;
-    }
+    // if (password != confirmPassword) {
+    //   toast.error(`Password and confirm password must be same!`);
+    //   return;
+    // }
 
     // dispatch the register action
-    dispatch(register(navigate, email, password, name, setIsLoading));
+    dispatch(login(navigate, email, password,  setIsLoading));
   };
   return (
     <div className="relative h-screen">
@@ -39,23 +40,9 @@ function RegisterPage() {
       <div className="relative z-10 flex justify-center items-center h-full">
         <div className="bg-white p-8 rounded-lg shadow-md max-w-md w-full">
           <h1 className="text-3xl text-center mb-6 text-black font-bold">
-            Register
+            Login
           </h1>
           <form onSubmit={onSubmit}>
-            <div className="mb-6">
-              <label htmlFor="name" className="block text-black mb-2 ">
-                Name
-              </label>
-              <input
-                type="text"
-                id="name"
-                className="w-full px-4 py-3 border rounded-md bg-secondary text-black focus:outline-none focus:border-primary placeholder:italic placeholder:text-slate-400"
-                placeholder="Input Your Name"
-                value={name}
-                onChange={(e) => setName(e.target.value)}
-                required
-              />
-            </div>
             <div className="mb-6">
               <label htmlFor="email" className="block text-black mb-2">
                 Email
@@ -84,26 +71,12 @@ function RegisterPage() {
                 required
               />
             </div>
-            <div className="mb-6">
-              <label htmlFor="confirmpassword" className="block text-black mb-2">
-                Confirm Password
-              </label>
-              <input
-                type="password"
-                id="confirmpassword"
-                className="w-full px-4 py-3 border rounded-md bg-secondary text-black focus:outline-none focus:border-primary placeholder:italic placeholder:text-slate-400"
-                placeholder="Confirm your password"
-                value={confirmPassword}
-                onChange={(e) => setConfirmPassword(e.target.value)}
-                required
-              />
-            </div>
 
             <button
               type="submit"
               className="block w-full py-3 px-4 bg-gradient-to-r from-[#933393] to-[#933393] hover:from-[#D3ADD3] hover:to-[#D3ADD3] text-white rounded-md focus:outline-none"
               disabled={isLoading}>
-              {isLoading ? "Processing..." : "Register"}
+              {isLoading ? "Processing..." : "Login"}
             </button>
             <label
               
@@ -111,7 +84,7 @@ function RegisterPage() {
             >
               Or
             </label>
-            <GoogleLoginComponent text={"Register with google"}/>
+            <GoogleLoginComponent text={"Login with google"}/>
           </form>
         </div>
       </div>
@@ -119,4 +92,4 @@ function RegisterPage() {
   );
 };
 
-export default RegisterPage;
+export default LoginPage;
