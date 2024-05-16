@@ -13,7 +13,7 @@ export const login = (navigate, email, password, setIsLoading) => async (dispatc
 
     let config = {
         method: "post",
-        url: `${import.meta.env.VITE_VERCEL_BACKEND_API}/api/auth/login`,
+        url: `${import.meta.env.VITE_VERCEL_BACKEND_API}/api/v1/auth/login`,
         headers: {
             "Content-Type": "application/json",
         },
