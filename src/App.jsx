@@ -25,7 +25,7 @@ const router = createBrowserRouter([
 function App() {
     return (
       <Provider store={store}>
-        <GoogleOAuthProvider clientId={import.meta.env.VITE_GOOGLE_CLIENT_ID}>
+        <GoogleOAuthProvider clientId={import.meta.env.VERCEL_VITE_GOOGLE_CLIENT_ID}>
           <RouterProvider router={router} />
           <ToastContainer theme="colored" />
         </GoogleOAuthProvider>
