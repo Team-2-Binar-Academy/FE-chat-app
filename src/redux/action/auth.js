@@ -13,7 +13,7 @@ export const login = (navigate, email, password, setIsLoading) => async (dispatc
 
     let config = {
         method: "post",
-        url: `${import.meta.env.VERCEL_VITE_BACKEND_API}/api/auth/login`,
+        url: `${import.meta.env.VITE_VERCEL_BACKEND_API}/api/auth/login`,
         headers: {
             "Content-Type": "application/json",
         },
@@ -53,7 +53,7 @@ export const loginWithGoogle = (navigate, accessToken) => async (dispatch) => {
 
     let config = {
         method: "post",
-        url: `${import.meta.env.VERCEL_VITE_BACKEND_API}/api/v1/auth/google-login`,
+        url: `${import.meta.env.VITE_VERCEL_BACKEND_API}/api/v1/auth/google-login`,
         headers: {
             "Content-Type": "application/json",
         },
@@ -93,7 +93,7 @@ export const register = (navigate, email, password, name, setIsLoading) => async
 
     let config = {
         method: "post",
-        url: `${import.meta.env.VERCEL_VITE_BACKEND_API}/api/v1/auth/register`,
+        url: `${import.meta.env.VITE_VERCEL_BACKEND_API}/api/v1/auth/register`,
         data: data,
     };
 
@@ -136,7 +136,7 @@ export const getProfile =
 
         let config = {
             method: "get",
-            url: `${import.meta.env.VERCEL_VITE_BACKEND_API}/api/auth/profile`,
+            url: `${import.meta.env.VITE_VERCEL_BACKEND_API}/api/auth/profile`,
             headers: {
                 Authorization: `Bearer ${token}`,
             },

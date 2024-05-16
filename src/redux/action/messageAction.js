@@ -8,7 +8,7 @@ export const getAllMessages = () => async (dispatch) => {
     try {
         // Imagize we get data from API (the variable is users)
         const response = await axios.get(
-            `${import.meta.env.VERCEL_VITE_BACKEND_API}/api/v1/messages`
+            `${import.meta.env.VITE_VERCEL_BACKEND_API}/api/v1/messages`
         );
         const { data } = response.data;
 
@@ -25,7 +25,7 @@ export const createNewMessage = (message) => async (dispatch, getState) => {
 
         const config = {
             method: "post",
-            url: `${import.meta.env.VERCEL_VITE_BACKEND_API}/api/v1/messages`,
+            url: `${import.meta.env.VITE_VERCEL_BACKEND_API}/api/v1/messages`,
             headers: {
                 "Content-Type": "application/json",
             },
