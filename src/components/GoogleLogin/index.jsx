@@ -21,7 +21,7 @@ const GoogleLoginComponent = ({ text }) => {
       className="block w-full py-3 px-4 bg-gradient-to-r from-[#F1F1F1] to-[#F1F1F1] hover:from-[#eedfee] hover:to-[#eedfee] text-dark rounded-md focus:outline-none"
       onClick={() => login()}
     >
-      Register with Google
+      {text}
     </button>
   );
 };
