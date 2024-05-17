@@ -1,24 +1,40 @@
 import { RouterProvider, createBrowserRouter } from "react-router-dom";
-import { HomePage } from "./pages/HomePage";
 import Login from "./pages/LoginPage";
 import Register from "./pages/RegisterPage";
 import { Provider } from "react-redux";
 import { ToastContainer } from "react-toastify";
 import store from "./redux/store";
 import { GoogleOAuthProvider } from "@react-oauth/google";
+import NavbarComponent from "./components/Navbar";
+import HomePage from "./pages/HomePage";
 
 const router = createBrowserRouter([
     {
         path: "/",
-        element: <HomePage />,
+        element: (
+            <div className="flex flex-col gap-10">
+                <NavbarComponent />
+                <HomePage />
+            </div>
+        ),
     },
     {
         path: "/login",
-        element: <Login />,
+        element: (
+            <div className="flex flex-col gap-10">
+                <NavbarComponent />
+                <Login />
+            </div>
+        ),
     },
     {
         path: "/register",
-        element: <Register />,
+        element: (
+            <div className="flex flex-col gap-10">
+                <NavbarComponent />
+                <Register />
+            </div>
+        ),
     },
 ]);
 
