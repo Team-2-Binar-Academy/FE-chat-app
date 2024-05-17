@@ -53,7 +53,11 @@ const NavbarComponent = () => {
                         )}
                     </li>
                 </div>
-                {user && <Link className="text-white">Hi, {user.name}</Link>}
+                {user && (
+                    <Link to="/profile" className="text-white">
+                        Hi, {user.name}
+                    </Link>
+                )}
             </ul>
         </nav>
     );

@@ -10,6 +10,7 @@ import NonProtected from "./components/NonProtected";
 import NavbarComponent from "./components/Navbar";
 import HomePage from "./pages/HomePage";
 import NotFoundPage from "./pages/NotFoundPage";
+import ProfilePage from "./pages/ProfilePage";
 
 const router = createBrowserRouter([
     {
@@ -19,6 +20,17 @@ const router = createBrowserRouter([
                 <div className="flex flex-col gap-10">
                     <NavbarComponent />
                     <HomePage />
+                </div>
+            </Protected>
+        ),
+    },
+    {
+        path: "/profile",
+        element: (
+            <Protected>
+                <div className="flex flex-col gap-10">
+                    <NavbarComponent />
+                    <ProfilePage />
                 </div>
             </Protected>
         ),
