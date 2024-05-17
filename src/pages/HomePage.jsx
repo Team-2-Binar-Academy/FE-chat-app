@@ -20,7 +20,7 @@ const HomePage = () => {
     const [typing, setTyping] = useState(false);
 
     useEffect(() => {
-        window.scrollTo(0, 1000);
+        window.scrollTo(0, 0);
     }, [messages]);
 
     // This useEffect will get all messages from backend
