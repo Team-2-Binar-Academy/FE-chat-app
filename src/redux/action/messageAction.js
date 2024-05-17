@@ -7,9 +7,7 @@ import { setMessages } from "../reducers/messageReducer";
 export const getAllMessages = () => async (dispatch) => {
     try {
         // Imagize we get data from API (the variable is users)
-        const response = await axios.get(
-            `${import.meta.env.VITE_VERCEL_BACKEND_API}/api/v1/messages`
-        );
+        const response = await axios.get(`${import.meta.env.VITE_BACKEND_API}/api/v1/messages`);
         const { data } = response.data;
 
         // Dispatch to reducers
@@ -25,7 +23,7 @@ export const createNewMessage = (message) => async (dispatch, getState) => {
 
         const config = {
             method: "post",
-            url: `${import.meta.env.VITE_VERCEL_BACKEND_API}/api/v1/messages`,
+            url: `${import.meta.env.VITE_BACKEND_API}/api/v1/messages`,
             headers: {
                 "Content-Type": "application/json",
             },
